@@ -17,20 +17,23 @@ const ItemCtrl = (function(){
             return data.items
         },
         logData: function(){
-        return data
+            return data
         }
     }
 })();
 
 const UICtrl = (function(){
+    const UISelectors = {
+        itemList: "#item-list"
+    }
     return {
-        populateItemList: function (items) {
+        populateItemList: function(items){
             let html = "";
 
             items.forEach(
-                function (item) {
+                function(item){
                     html += `<li class="collection-item" id="item-${item.id}">
-                    <strong>${item.name}:</strong> <em>${item.calories} Calories</em>
+                    <strong>${item.name}: </strong> <em>${item.calories} Calories</em>
                     <a href="#" class="secondary-content">
                         <i class="edit-item fa fa-pencil"></i>
                     </a>
@@ -50,3 +53,4 @@ const App = (function(ItemCtrl, UICtrl){
         }
     }
 })(ItemCtrl, UICtrl);
+App.init()
