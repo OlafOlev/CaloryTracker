@@ -1,95 +1,72 @@
-# Testplaan projekti jaoks: Trenni Registreerimissüsteem
+Alljärgnevalt esitan testijuhtumid igale kasutajarühmale vastavalt esitatud nõuetele:
 
-## 1. Sissejuhatus
+**Kasutaja:**
+1.1 **Registreerimine trenni**
+   - Positiivne: Kasutaja saab edukalt registreerida end valitud trenni.
+   - Negatiivne: Kasutaja ei saa registreeruda või saab veateate registreerimise ebaõnnestumisest.
 
-Projekti ülevaade:
-- Projekti eesmärk on luua veebirakendus, mis võimaldab kasutajatel registreerida end erinevatesse treeningtundidesse ning võimaldab administraatoritel ja treeneritel hallata treeninguid ja kasutajate andmeid.
+1.2 **Kontaktinfo sisestamine registreerimisel**
+   - Positiivne: Kasutaja saab sisestada nime, telefoninumbri, e-posti ja lisainfo kasti oma kontaktandmed registreerimisel.
+   - Negatiivne: Kasutaja ei saa kõiki nõutavaid andmeid sisestada või esineb vigu sisestatud andmetes.
 
-Testimise tähtsus projekti kontekstis:
-- Testimine on oluline selleks, et tagada rakenduse usaldusväärsus, toimivus ja kasutajasõbralikkus. Vigade ennetamine ja kvaliteedi tagamine on projekti edukuse võtmeks.
+1.3 **Kalendrisse teate lisamine trenni toimumisaegade kohta**
+   - Positiivne: Kasutaja saab lisada automaatse teate oma kalendrisse trenni toimumisaegade kohta, sarnaselt Facebooki sündmuse lisamisele.
+   - Negatiivne: Teate lisamisel esineb viga või see ei kajastu kasutaja kalendris.
 
-Testiplaani peamised eesmärgid:
-- Tagada, et rakendus vastab kõikidele nõuetele ja funktsionaalsustele, mis on esitatud kasutajate, administraatorite ja treenerite poolt.
-- Kontrollida rakenduse turvalisust, jõudlust ja kasutatavust.
-- Hinnata testimise ressursinõudeid ja ajakava.
+1.4 **Trennis (mitte)osalemise märkimine**
+   - Positiivne: Kasutaja saab edukalt märkida end trennis osalejaks või tühistada oma osalemise.
+   - Negatiivne: Märgistamisel tekib viga või seda ei saa teha.
 
-## 2. Testimise Ulatus
+1.5 **Meeldetuletuse saamine registreerimise kohta e-posti teel**
+   - Positiivne: Kasutaja saab edukalt e-posti meeldetuletuse, kinnitades, et on end trenni registreerinud.
+   - Negatiivne: E-posti meeldetuletus ei jõua kasutajani või sellega esineb probleeme.
 
-Projekti aspektid, mida testitakse:
-- Funktsionaalsus: Kasutaja registreerimine, kontaktinfo sisestamine, kalendrisse teate lisamine, osalemise märkimine, meeldetuletused.
-- Administraatori funktsioonid: Lehe muutmine, uudiste/artiklite haldamine, tabeli sisu muutmine, piltide lisamine, õpetajate haldamine, kasutajate andmete haldamine, registreerimise avamine.
-- Treeneri funktsioonid: Uudiste/artiklite haldamine, registreerunud kasutajate kontaktinfo nägemine, trenni tühistamine, uute trennide lisamine, osalejate nägemine.
+**Admin:**
+2.1 **Lehe olemuse muutmine**
+   - Positiivne: Admin saab edukalt muuta lehe elemente ja nende asukohti vastavalt vajadustele.
+   - Negatiivne: Muudatuste tegemisel tekib viga või need ei kajastu lehel õigesti.
 
-Mida ei testita:
-- Väliste süsteemide sõltuvused ja nendega seotud testimine (nt kalendrisüsteemide API testimine).
+2.2 **Uudiste/artiklite lisamine/muutmine/kustutamine**
+   - Positiivne: Admin saab edukalt lisada, muuta ja kustutada uudiseid ja artikleid lehel.
+   - Negatiivne: Uudiste või artiklite lisamisel/muutmisel/kustutamisel tekib viga.
 
-## 3. Testimismeetodid ja Tehnikad
+2.3 **Tabeli sisu muutmine (hinnad/tunniplaan)**
+   - Positiivne: Admin saab edukalt muuta tabeli sisu, sealhulgas hindade ja tunniplaani andmeid.
+   - Negatiivne: Andmete muutmisel tekib viga või need ei kajastu õigesti.
 
-Kasutatavad testimismeetodid ja -tehnikad:
-- Manuaalne testimine: Kasutatakse kasutajaliidese testimiseks ja erinevate kasutajaskenaariumide katmiseks.
-- Automatiseeritud testimine: Automatiseeritud skriptide kasutamine korduvate ülesannete testimiseks.
-- Integreeritud testimine: Kontrollitakse süsteemi integreeritud komponentide toimivust.
-- Regressioonitestimine: Varasemalt tuvastatud vead kontrollitakse uuesti, et tagada nende parandamine.
+2.4 **Piltide lisamine**
+   - Positiivne: Admin saab edukalt lisada pilte lehele.
+   - Negatiivne: Piltide lisamisel tekib viga või need ei kajastu õigesti.
 
-## 4. Testjuhtumid
+2.5 **Õpetajate haldamine (lisamine/muutmine/kustutamine)**
+   - Positiivne: Admin saab edukalt lisada, muuta ja kustutada õpetajaid nimekirjast.
+   - Negatiivne: Õpetajate haldamisel tekib viga.
 
-- **Testjuhtum 1: Kasutaja registreerimine**
-  - Positiivne: Kasutaja suudab edukalt registreerida end trenni.
-  - Negatiivne: Valede andmete sisestamisel tekib viga.
+2.6 **Kasutajate andmestiku haldamine (nimi, telefon, e-post)**
+   - Positiivne: Admin saab edukalt hallata kasutajate andmeid, sealhulgas lisada, teha muudatusi või kustutada kasutajaid.
+   - Negatiivne: Andmestiku haldamisel tekib viga või kasutajate andmeid ei saa edukalt hallata.
 
-- **Testjuhtum 2: Administraatori funktsioonid**
-  - Positiivne: Administraator saab edukalt muuta lehe sisu, lisada uudiseid, muuta tabeli sisu ja haldada kasutajate andmeid.
-  - Negatiivne: Administraatori funktsioonid ei toimi ootuspäraselt.
+2.7 **Registreerimise avamine oma trenni**
+   - Positiivne: Admin saab edukalt avada registreerimise oma trenni.
+   - Negatiivne: Registreerimise avamisel tekib viga või see ei toimi ootuspäraselt.
 
-- **Testjuhtum 3: Treeneri funktsioonid**
-  - Positiivne: Treener suudab edukalt lisada uusi trenne, tühistada trenne ja näha osalejaid.
-  - Negatiivne: Treeneri funktsioonid ei toimi ootuspäraselt.
+**Õpetaja/treener:**
+3.1 **Uudiste/artiklite lisamine/muutmine**
+   - Positiivne: Õpetaja saab edukalt lisada ja muuta uudiseid ja artikleid lehel.
+   - Negatiivne: Uudiste või artiklite lisamisel/muutmisel tekib viga.
 
-## 5. Testimisvahendid
+3.2 **Kontaktinfo nägemine registreerunud kasutajate kohta**
+   - Positiivne: Õpetaja saab näha kontaktinfot kasutajate kohta, kes on tema trenni registreerunud.
+   - Negatiivne: Kontaktinfo kuvamisel esineb viga või see ei ole kättesaadav.
 
-Kasutatavad testimisvahendid:
-- Manuaalne testimine: Käsimikser (kasutajaliides), mobiilne ja desktop brauserid.
-- Automatiseeritud testimine: Selenium WebDriver (vajadusel).
-- Andmebaasi testimine: SQL päringute tööriist (nt SQL Server Management Studio).
+3.3 **Trenni tühistamine**
+   - Positiivne: Õpetaja saab edukalt tühistada trenni, kui see ei toimu.
+   - Negatiivne: Trenni tühistamisel tekib viga.
 
-## 6. Riskianalüüs
+3.4 **Uute trennide lisamine**
+   - Positiivne: Õpetaja saab edukalt lisada uusi trenne.
+   - Negatiivne: Uute trennide lisamisel tekib viga.
 
-Võimalikud riskid testimisega seoses:
-- Kasutajate andmete lekke risk.
-- Rakenduse turvalisuse haavatavus.
-- Ressursside puudumine testimiseks.
-- Kalendrisse automaatse teate lisamise keerukus.
-
-Riskide maandamise kava:
-- Andmekaitsemeetmete rakendamine kasutajaandmete kaitsmiseks.
-- Turvalisuse auditeerimine ja paranduste rakendamine.
-- Ressursside eelnevalt kindlaksmääramine testimiseks.
-- Põhjalik testimine kalendrisse teate lisamise funktsionaalsuse kohta.
-
-## 7. Ajakava ja Meileniipunktid
-
-- Testimise faasid:
-  - Ettevalmistus ja keskkonna seadistamine: 2 nädalat
-  - Funktsionaalne testimine: 3 nädalat
-  - Turvalisuse testimine: 1 nädal
-  - Kasutatavuse testimine: 2 nädalat
-  - Automatiseeritud testimine (kui kohaldatav): 2 nädalat
-  - Lõpparuande koostamine: 1 nädal
-
-- Meileniipunktid:
-  - Ettevalmistuse lõpp ja testimise alustamine: 15. november 2023
-  - Funktsionaalse testimise lõpp: 15. detsember 2023
-  - Projekti lõpp ja lõpparuande esitamine: 31. detsember 2023
-
-## 8. Ressursinõuded
-
-Vajalikud ressursid testimiseks:
-- Testijad ja testimisjuhid
-- Testimiskeskkonnad (arengu- ja testimiskeskkonnad)
-- Arvutid ja mobiilseadmed testimiseks
-- Andmebaasi testimise vahendid
-- Turvalisuse testimise tööriistad
-
-## 9. Dokumentatsioon
-
-Terviklik testplaan dokumenteerib testimise ulatuse, meetodid, testjuhtumid, ajakava, ressursinõuded ja riskianalüüsi projekti Trenni Registreerimissüsteemi jaoks. Dokument aitab tagada tõhusa testimise ning parandada projekti kvaliteeti ja kasutajasõbralikkust.
+3.5 **Trennis osalejate nägemine**
+   - Positiivne: Õpetaja näeb, kes on tema trennis osalejad.
+   - Negatiivne: Osalejate nägemisel esineb viga või see ei kuvata õigesti.
